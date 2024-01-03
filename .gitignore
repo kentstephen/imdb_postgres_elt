@@ -1,0 +1,9 @@
+imdb_venv/
+_pycache_/
+alter_for_constraints.sql
+deprecated_imdb_ddl_copy_into.sql
+extract_paths.json
+imdb_tsv_schema.txt
+many_2_many.sql
+tsvs_from_imdb
+__pycache__/import_imdb_tsvs.cpython-311.pyc
