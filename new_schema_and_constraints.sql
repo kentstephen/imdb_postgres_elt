@@ -96,7 +96,7 @@ ALTER TABLE name_known_for ADD FOREIGN KEY (tconst) REFERENCES title_basics (tco
 ALTER TABLE name_known_for ADD FOREIGN KEY (nconst) REFERENCES name_basics (nconst);
 
 
-ALTER TABLE name_title_relation RENAME TO name_known_for;
+
 COMMIT;
 
 

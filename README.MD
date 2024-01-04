@@ -1,6 +1,10 @@
 # Get IMDB Data, Put Into PostgreSQL, Recreate the Schema, Source (https://developer.imdb.com/non-commercial-datasets/)
 
-[ERD of Project](https://github.com/kentstephen/imdb_postgres_elt/blob/main/diagrams/imdb_schema.png)
+
+
+![ERD of Project](https://github.com/kentstephen/imdb_postgres_elt/blob/main/diagrams/imdb_schema.png)
+
+
 
 ## Get the IMDB Data
 
