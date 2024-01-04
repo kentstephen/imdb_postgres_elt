@@ -48,4 +48,5 @@ To run it write ```\i imdb.sql```
 
 ## These files can take a while to run.
 
-Let me know what you think, if there's anything I should try. I am going put together some sample queries you will be able to test out.
+Let me know what you think, if there's anything I should try. I am adding queries to [sample_queries.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/sample_queries.sql)
+to give an idea of how to use the dataset.
