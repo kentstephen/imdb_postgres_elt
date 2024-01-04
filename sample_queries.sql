@@ -1,5 +1,6 @@
 -- You have to join a lot of tables to get any basic info
--- from this dataset, here is the first example
+-- from this dataset, here is the first example, 
+-- all of the movies starring Fred Astaire and, their associated directors
 
 
 WITH FIND_FRED AS (
@@ -28,3 +29,5 @@ INNER JOIN name_basics nb ON td.director_nconst = nb.nconst;
 -- tt0027630,Follow the Fleet,Mark Sandrich
 -- tt0028333,Swing Time,George Stevens
 -- tt0028757,A Damsel in Distress,George Stevens
+
+-- some of the movies have a lot of directors
