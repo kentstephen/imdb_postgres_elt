@@ -13,7 +13,7 @@ To do this, insert the path to where you cloned the directory into [import_imdb_
 That will download and extract the 7 TSV files, and then create a new directory within the one you provided called tsvs_from_imdb. 
 It will also save the file path to the TSVs so when you run [insert_file_path.py](https://github.com/kentstephen/imdb_postgres_elt/blob/main/insert_file_paths.py), the correct file path will be inserted into the first .sql file [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql)
 
-### If they python files don't work 
+### If the python files don't work 
 
 All you need to run the .sql files is to download and extract the 7 .gz files from the source, and then copy the correct path to where syntax in [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql)
 
