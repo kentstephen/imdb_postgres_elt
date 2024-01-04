@@ -3,6 +3,8 @@ import gzip
 import shutil
 import os
 import json
+# update!!
+user_provided_directory = "path/to/where/you/cloned/the/git/using/forward/slashes"  # REPLACE with the actual path
 # List of direct download URLs for the .gz files
 gz_file_urls = [
     "https://datasets.imdbws.com/title.ratings.tsv.gz",
@@ -13,8 +15,6 @@ gz_file_urls = [
     "https://datasets.imdbws.com/title.akas.tsv.gz",
     "https://datasets.imdbws.com/name.basics.tsv.gz",
 ]
-
-user_provided_directory = "C:/Project_Files/imdb/"  # REPLACE with the actual path
 
 save_directory = os.path.join(user_provided_directory, 'tsvs_from_imdb')
 if not os.path.exists(save_directory):

@@ -1,5 +1,5 @@
 -- fill in your user, port and host for psql 
--- psql -h localhost -p 5432 -U skent -d postgres
+-- like psql -h localhost -p 5432 -U skent -d postgres
 CREATE DATABASE imdb;
 
 \c imdb
