@@ -32,7 +32,7 @@ At this point there are no relations between the entities as some problems will 
 
 2. The next thing I do is CREATE 3 new tables: title_writers, title_directors, and name_known_for. title_crew is made up of arrays of writers and directors, which is hard to use so I created 2 new tables with 2 columns, a title ID (tconst) and matching name ID (nconst). name_basics has an array column of nconst and a bunch of tconst, with name_known_for I took those arrays and made a single relationship, one nconst for one tconst. 
 
-So after you run this, title_crew, and the column knownfortitles in name_basics are deprecated.
+So after you run this, title_crew, and the column knownfortitles in name_basics are deprecated. I think this schema is closer to the many to many principal.
 
 # If you want to Run all .sql files at once
 
