@@ -42,7 +42,7 @@ CD in a terminal to where you cloned the files, type in:
 
 ```psql -h yourhost -p 5432 -U your -d postgres```
 
-[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) I suggest using the default postgres db, because this file will create the database imdb, if you already did that you can comment out that line and run the rest.
+[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql, because this file will create the database imdb, if you already did that you can comment out that line and run the rest.
 
 To run it write ```\i imdb.sql```
 
