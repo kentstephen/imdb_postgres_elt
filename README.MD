@@ -52,4 +52,4 @@ To run it write ```\i imdb.sql```
 ## These files can take a while to run.
 
 Let me know what you think, if there's anything I should change. I am adding queries to [sample_queries.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/sample_queries.sql)
-to give an idea of how to use the dataset.
+to give an idea of how to use the dataset. The trick is you have to get from one parent table to another (name_basics and title_basics) by means of another joining the two with a table that has both tconst and nconst. Refer to the ERD.
