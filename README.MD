@@ -49,7 +49,7 @@ Open a terminal and cd to where you cloned the files, type in:
 
 ```psql -h yourhost -p postgresport -U youruser -d postgres```
 
-m=Mine looks like:
+Mine looks like:
 
 ```psql -h localhost -p 5432 -U skent -d postgres```
 
