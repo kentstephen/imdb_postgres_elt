@@ -41,7 +41,7 @@ So after you run this: title_crew and the column knownfortitles in name_basics a
 
 Open a terminal and cd to where you cloned the files, type in:
 
-```psql -h yourhost -p 5432 -U youruser -d postgres```
+```psql -h yourhost -p yourport -U youruser -d postgres```
 
 mine looks like:
 
