@@ -6,3 +6,4 @@ extract_paths.json
 imdb_tsv_schema.txt
 many_2_many.sql
 tsvs_from_imdb
+save_directory.json

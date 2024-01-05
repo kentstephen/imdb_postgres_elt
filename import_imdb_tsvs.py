@@ -4,11 +4,11 @@ import shutil
 import os
 import json
 
-# User-provided directory
-user_provided_directory = "path/to/where/you/cloned/the/git/using/forward/slashes"  # Replace with the actual path
+# Get the current working directory (where the script is located)
+current_directory = os.getcwd()
 
 # Subdirectory for storing the .tsv files
-save_directory = os.path.join(user_provided_directory, 'tsvs_from_imdb')
+save_directory = os.path.join(current_directory, 'tsvs_from_imdb') + os.sep
 
 # Create the subdirectory if it doesn't exist
 if not os.path.exists(save_directory):

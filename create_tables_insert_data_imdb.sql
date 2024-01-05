@@ -79,42 +79,42 @@ CREATE TABLE IF NOT EXISTS title_principals (
 );
 
 
-COPY title_basics FROM '{{user_provided_directory}}/title.basics.tsv'
+COPY title_basics FROM '{{user_provided_directory}}title.basics.tsv'
 DELIMITER E'\t'
 CSV HEADER
 QUOTE E'\b'
 NULL AS '\N';
 
-COPY name_basics FROM '{{user_provided_directory}}/name.basics.tsv'
+COPY name_basics FROM '{{user_provided_directory}}name.basics.tsv'
 DELIMITER E'\t'
 CSV HEADER
 QUOTE E'\b'
 NULL AS '\N';
 
-COPY title_principals FROM '{{user_provided_directory}}/title.principals.tsv'
+COPY title_principals FROM '{{user_provided_directory}}title.principals.tsv'
 DELIMITER E'\t'
 QUOTE E'\b'
 CSV HEADER NULL AS '\N';
 
-COPY title_akas FROM '{{user_provided_directory}}/title.akas.tsv'
+COPY title_akas FROM '{{user_provided_directory}}title.akas.tsv'
 DELIMITER E'\t'
 CSV HEADER
 QUOTE E'\b'
 NULL AS '\N';
 
-COPY title_ratings FROM '{{user_provided_directory}}/title.ratings.tsv'
+COPY title_ratings FROM '{{user_provided_directory}}title.ratings.tsv'
 DELIMITER E'\t'
 CSV HEADER
 QUOTE E'\b'
 NULL AS '\N';
 
-COPY title_crew FROM '{{user_provided_directory}}/title.crew.tsv'
+COPY title_crew FROM '{{user_provided_directory}}title.crew.tsv'
 DELIMITER E'\t'
 CSV HEADER
 QUOTE E'\b'
 NULL AS '\N';
 
-COPY title_episode FROM '{{user_provided_directory}}/title.episode.tsv'
+COPY title_episode FROM '{{user_provided_directory}}title.episode.tsv'
 DELIMITER E'\t'
 CSV HEADER
 QUOTE E'\b'
