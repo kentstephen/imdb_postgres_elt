@@ -35,9 +35,11 @@ At this point there are no relations between the entities, because:
 
 So after you run this: title_crew and the column knownfortitles in name_basics are deprecated. I think this schema is closer to the many to many principal.
 
-# If you want to Run all .sql files at once
+# If you want to run all the SQL at once
 
 ## You can do that with psql
+
+First, make sure you have the file paths updated in the COPY FROM lines in [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql)
 
 Open a terminal and cd to where you cloned the files, type in:
 
