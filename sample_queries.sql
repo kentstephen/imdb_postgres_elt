@@ -29,11 +29,16 @@ ORDER BY ff.year;
 
 -- this should yield something like this:
 
--- tt0025164,The Gay Divorcee,Mark Sandrich
--- tt0026942,Roberta,William A. Seiter
--- tt0027125,Top Hat,Mark Sandrich
--- tt0027630,Follow the Fleet,Mark Sandrich
--- tt0028333,Swing Time,George Stevens
--- tt0028757,A Damsel in Distress,George Stevens
+-- tt0025164,1934,The Gay Divorcee,Mark Sandrich
+-- tt0027125,1935,Top Hat,Mark Sandrich
+-- tt0026942,1935,Roberta,William A. Seiter
+-- tt0027630,1936,Follow the Fleet,Mark Sandrich
+-- tt0028333,1936,Swing Time,George Stevens
+-- tt0029546,1937,Shall We Dance,Mark Sandrich
+-- tt0028757,1937,A Damsel in Distress,George Stevens
+-- tt0029971,1938,Carefree,Mark Sandrich
+-- tt0031983,1939,The Story of Vernon and Irene Castle,H.C. Potter
+-- tt0032284,1940,Broadway Melody of 1940,Norman Taurog
+
 
 -- some of the movies have a lot of directors
