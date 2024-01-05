@@ -15,7 +15,6 @@ WITH FIND_FRED AS (
         nb.primaryname = 'Fred Astaire'
         AND tb.startyear < '1990' -- three years after he died to filter out all the posthumous credits
 )
-
 SELECT
     ff.title_id,
     ff.year,
@@ -60,3 +59,28 @@ WHERE
 -- The Story of Vernon and Irene Castle
 -- Funny Face
 -- The Towering Inferno
+
+
+-- SELECT the actors, their birth and death year joining title_principals (where all the actors nconst credits
+-- have a corresponding tconst then a subquery to find the tconst from title_basics
+
+SELECT
+    nb.primaryname AS actors,
+    nb.birthyear,
+    nb.deathyear
+FROM name_basics nb
+JOIN title_principals tp
+ON nb.nconst = tp.nconst
+WHERE
+    tp.tconst = (SELECT tconst
+                  FROM title_basics
+                  WHERE primarytitle = 'The Story of Vernon and Irene Castle')
+
+-- George Haight,1905,1984
+-- Fred Astaire,1899,1987
+-- Ginger Rogers,1911,1995
+-- Edna May Oliver,1883,1942
+-- Walter Brennan,1894,1974
+-- H.C. Potter,1904,1977
+-- Richard Sherman,1905,1962
+-- Oscar Hammerstein II,1895,1960
