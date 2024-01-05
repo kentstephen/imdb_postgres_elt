@@ -13,7 +13,7 @@ WITH FIND_FRED AS (
     INNER JOIN title_basics tb ON tp.tconst = tb.tconst
     WHERE
         nb.primaryname = 'Fred Astaire'
-        AND tb.startyear < '1990' -- three years after he died to filter out all the posthumous stuff
+        AND tb.startyear < '1990' -- three years after he died to filter out all the posthumous credits
 )
 
 SELECT
