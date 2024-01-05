@@ -28,7 +28,7 @@ At this point there are no relations between the entities, because:
 
 ## Add tables and constraints
 
-1. I wanted to make this more query friendly, one of the things I do in [new_schema_and_constraints.slq](https://github.com/kentstephen/imdb_postgres_elt/blob/main/new_schema_and_constraints.sql) is insert all of the unique tconst and nconst values that are in the five children tables but not in title_basics or name_basics into the the parent tables along with the string 'ANOMALY' in the next column. 
+1. I wanted to make this more query friendly, one of the things I do in [new_schema_and_constraints.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/new_schema_and_constraints.sql) is insert all of the unique tconst and nconst values that are in the five children tables but not in title_basics or name_basics into the the parent tables along with the string 'ANOMALY' in the next column. 
 
 2. The other thing I do is CREATE 3 new tables: title_writers, title_directors, and name_known_for. title_crew is made up of arrays of writers and directors, which is hard to use so I created 2 new tables with 2 columns, a title ID (tconst) and matching name ID (nconst). name_basics has an array column of nconst and a bunch of tconst, with name_known_for I took those arrays and made a single relationship, one nconst for one tconst. 
 
