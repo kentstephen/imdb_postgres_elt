@@ -47,10 +47,12 @@ mine looks like:
 
 ```psql -h localhost -p 5432 -U skent -d postgres```
 
+You will then be prompted to enter your user password
+
 [imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql because this file will create the database imdb and then connect to it. If you already created the database then you can comment out that line in [imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) and run the rest.
 
 To run it, write ```\i imdb.sql``` in psql
 
 ## These files can take a while to run.
 
-Let me know what you think, if there's anything I should change. I am adding queries to [sample_queries.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/sample_queries.sql) to give an idea of how to use the dataset. The trick is a lot of the time you have to get from one parent table to another (name_basics and title_basics) by means of another joining the two with a table that has both tconst and nconst. Refer to the ERD.
+Let me know what you think. I am adding queries to [sample_queries.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/sample_queries.sql) to give an idea of how to use the dataset. The trick is a lot of the time you have to get from one parent table to another (name_basics and title_basics) by means of another joining the two with a table that has both tconst and nconst. Refer to the ERD.
