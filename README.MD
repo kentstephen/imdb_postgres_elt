@@ -15,7 +15,7 @@ It will also save the file path to the TSVs so when you run [insert_file_path.py
 
 ### If the python files don't work or you don't want to use them
 
-All you need to run the .sql files is to download and extract the 7 .gz files from the source, and then copy the correct path where you see {{user_provided_path}}} in the COPY FROM lines in [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql)
+All you need to run the .sql files is to download and extract the 7 .gz files from the source, and then copy the correct path where you see {{user_provided_directory}} in the COPY FROM lines in [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql)
 
 ## Once you have the data
 
