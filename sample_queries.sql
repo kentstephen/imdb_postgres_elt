@@ -40,5 +40,23 @@ ORDER BY ff.year;
 -- tt0031983,1939,The Story of Vernon and Irene Castle,H.C. Potter
 -- tt0032284,1940,Broadway Melody of 1940,Norman Taurog
 
-
 -- some of the movies have a lot of directors
+
+
+-- SELECT titles Fred Astaire is known by from our name_known_for table which was
+-- created from name_basics.knownfortitles array
+
+SELECT
+    tb.primarytitle
+FROM title_basics tb
+JOIN name_known_for nkf
+ON tb.tconst = nkf.tconst
+WHERE
+    nkf.nconst IN (SELECT nconst
+                  FROM name_basics
+                  WHERE primaryname = 'Fred Astaire')
+
+-- On the Beach
+-- The Story of Vernon and Irene Castle
+-- Funny Face
+-- The Towering Inferno
