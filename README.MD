@@ -23,16 +23,17 @@ You need to ```CREATE DATABASE imdb;``` to run the .sql files you set your conne
 
 At this point there are no relations between the entities, because: 
 
-1. There are values in children tables that are not in the two tables that should have Primary Keys (title_basics and name_basics). 
+1. There are values in children tables that are not in the two tables that should have Primary Keys (title_basics and name_basics).
+
 2. Some of tables utilize arrays, which will make querying the data very difficult. If all you want is the data in tables, you can stop here, but the next file will offer my solution.
 
 ## Add tables and constraints
 
-1. I wanted to make this more query friendly, one of the things I do in [new_schema_and_constraints.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/new_schema_and_constraints.sql) is insert all of the unique tconst and nconst values that are in the five children tables but not in title_basics or name_basics into the the parent tables along with the string 'ANOMALY' in the next column. 
+1. I wanted to make this more query friendly, one of the things I do in [new_schema_and_constraints.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/new_schema_and_constraints.sql) is insert all of the unique tconst and nconst values that are in the five children tables but not in title_basics or name_basics into those tables along with the string 'ANOMALY' in the next column, for future detective work. 
 
 2. The other thing I do is CREATE 3 new tables: title_writers, title_directors, and name_known_for. title_crew is made up of arrays of writers and directors, which is hard to use so I created 2 new tables with 2 columns, a title ID (tconst) and matching name ID (nconst). name_basics has an array column of nconst and a bunch of tconst, with name_known_for I took those arrays and made a single relationship, one nconst for one tconst. 
 
-So after you run this, title_crew, and the column knownfortitles in name_basics are deprecated. I think this schema is closer to the many to many principal.
+So after you run this: title_crew and the column knownfortitles in name_basics are deprecated. I think this schema is closer to the many to many principal.
 
 # If you want to Run all .sql files at once
 
@@ -43,13 +44,13 @@ Open a terminal and cd to where you cloned the files, type in:
 ```psql -h yourhost -p 5432 -U youruser -d postgres```
 
 mine looks like:
+
 ```psql -h localhost -p 5432 -U skent -d postgres```
 
-[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql because this file will create the database imdb and then connect to it. If you already created the database that you can comment out that line and run the rest.
+[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql because this file will create the database imdb and then connect to it. If you already created the database then you can comment out that line in [imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) and run the rest.
 
-To run it write ```\i imdb.sql```
+To run it, write ```\i imdb.sql``` in psql
 
 ## These files can take a while to run.
 
-Let me know what you think, if there's anything I should change. I am adding queries to [sample_queries.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/sample_queries.sql)
-to give an idea of how to use the dataset. The trick is you have to get from one parent table to another (name_basics and title_basics) by means of another joining the two with a table that has both tconst and nconst. Refer to the ERD.
+Let me know what you think, if there's anything I should change. I am adding queries to [sample_queries.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/sample_queries.sql) to give an idea of how to use the dataset. The trick is a lot of the time you have to get from one parent table to another (name_basics and title_basics) by means of another joining the two with a table that has both tconst and nconst. Refer to the ERD.
