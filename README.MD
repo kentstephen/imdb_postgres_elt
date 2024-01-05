@@ -8,7 +8,7 @@
 
 ## Get the IMDB Data
 
-To do this, insert the path to where you cloned the directory into [import_imdb_tsvs.py](https://github.com/kentstephen/imdb_postgres_elt/blob/main/import_imdb_tsvs.py)
+To do this, insert the path to where you cloned the directory into [import_imdb_tsvs.py](https://github.com/kentstephen/imdb_postgres_elt/blob/main/import_imdb_tsvs.py), you will need to install the requests library.
 
 That will download and extract the 7 TSV files, and then create a new directory within the one you provided called tsvs_from_imdb. 
 It will also save the file path to the TSVs so when you run [insert_file_path.py](https://github.com/kentstephen/imdb_postgres_elt/blob/main/insert_file_paths.py), the correct file path will be inserted into the first .sql file [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql)
@@ -28,7 +28,7 @@ At this point there are no relations between the entities, because:
 
 ## Add tables and constraints
 
-1. I wanted to make this more query friendly, one of the things I do in [new_schema_and_constraints.slq](https://github.com/kentstephen/imdb_postgres_elt/blob/main/new_schema_and_constraints.sql) is insert all of the unique tconst and nconst values that are in the five children tables but not in title_basics or name_basics into the the parent tables along with the string 'ANOMALY' in the next column. 
+1. I wanted to make this more query friendly, one of the things I do in [new_schema_and_constraints.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/new_schema_and_constraints.sql) is insert all of the unique tconst and nconst values that are in the five children tables but not in title_basics or name_basics into the the parent tables along with the string 'ANOMALY' in the next column. 
 
 2. The other thing I do is CREATE 3 new tables: title_writers, title_directors, and name_known_for. title_crew is made up of arrays of writers and directors, which is hard to use so I created 2 new tables with 2 columns, a title ID (tconst) and matching name ID (nconst). name_basics has an array column of nconst and a bunch of tconst, with name_known_for I took those arrays and made a single relationship, one nconst for one tconst. 
 
@@ -45,11 +45,11 @@ Open a terminal and cd to where you cloned the files, type in:
 mine looks like:
 ```psql -h localhost -p 5432 -U skent -d postgres```
 
-[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql, because this file will create the database imdb and then connect to, if you already did that you can comment out that line and run the rest.
+[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql because this file will create the database imdb and then connect to it. If you already created the database that you can comment out that line and run the rest.
 
 To run it write ```\i imdb.sql```
 
 ## These files can take a while to run.
 
 Let me know what you think, if there's anything I should change. I am adding queries to [sample_queries.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/sample_queries.sql)
-to give an idea of how to use the dataset.
+to give an idea of how to use the dataset. The trick is you have to get from one parent table to another (name_basics and title_basics) by means of another joining the two with a table that has both tconst and nconst. Refer to the ERD.

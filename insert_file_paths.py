@@ -14,12 +14,12 @@ def update_sql_file(sql_file_path, tsv_directory):
         file.write(updated_sql_content)
     print("SQL file updated.")
 
-# Read the JSON file to get the extract paths
-with open('extract_paths.json', 'r') as file:
-    extract_paths = json.load(file)
+# Read the JSON file to get the directory path
+with open('save_directory.json', 'r') as file:
+    directory_data = json.load(file)
 
-# Get the directory of the TSV files from any of the paths in extract_paths
-tsv_directory = os.path.dirname(list(extract_paths.values())[0])
+# Get the directory of the TSV files
+tsv_directory = directory_data["tsv_files_directory"]
 
 # Path to the SQL file, assuming it is in the same directory as this script
 sql_file_path = os.path.join(os.getcwd(), 'create_tables_insert_data_imdb.sql')
