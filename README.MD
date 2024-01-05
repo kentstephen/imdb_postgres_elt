@@ -60,4 +60,6 @@ To run it, write ```\i imdb.sql``` in psql
 
 ## These files can take a while to run.
 
-Enjoy and let me know what you think! I am adding queries to [sample_queries.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/sample_queries.sql) to give an idea of how to use the dataset. The trick is a lot of the time you have to get from one parent table to another (name_basics and title_basics) by means of another joining the two with a table that has both tconst and nconst. Refer to the ERD. I haven't included indexing yet. While I was testing the SQL files I didn't notice a difference when I added indices, but maybe it would help performance.
+Enjoy and let me know what you think! I am adding queries to [sample_queries.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/sample_queries.sql) to give an idea of how to use the dataset. The trick is a lot of the time you have to get from one parent table to another (name_basics and title_basics) by means of another joining the two with a table that has both tconst and nconst. Refer to the ERD. So far I have found that selecting the nconst or tconst as well as primarytitle or primaryname, because if you want to do a follow up query it's easier to search with the IDs.
+
+I haven't included indexing yet. While I was testing the SQL files I didn't notice a difference when I added indices, but maybe it would help performance.
