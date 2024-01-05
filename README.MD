@@ -19,7 +19,7 @@ All you need to run the .sql files is to download and extract the 7 .gz files fr
 
 ## Once you have the data
 
-You need to ```CREATE DATABASE imdb;``` then to run the .sql files you set your connection in your IDE to imdb.public and run [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql), this will create the schema and then copy the TSVs into the respective tables. 
+You need to ```CREATE DATABASE imdb;``` to run the .sql files you set your connection in your IDE to imdb.public and run [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql), this will create the schema and then copy the TSVs into the respective tables. 
 
 At this point there are no relations between the entities, because: 
 
