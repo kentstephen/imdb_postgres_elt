@@ -27,7 +27,7 @@ INNER JOIN name_basics nb ON td.director_nconst = nb.nconst
 ORDER BY ff.year;
 
 
--- this should yield something likeC; this:
+-- this should yield something like this:
 
 -- tt0025164,The Gay Divorcee,Mark Sandrich
 -- tt0026942,Roberta,William A. Seiter
