@@ -45,7 +45,7 @@ Open a terminal and cd to where you cloned the files, type in:
 mine looks like:
 ```psql -h localhost -p 5432 -U skent -d postgres```
 
-[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql, because this file will create the database imdb and then connect to, if you already did that you can comment out that line and run the rest.
+[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql because this file will create the database imdb and then connect to it. If you already created the database that you can comment out that line and run the rest.
 
 To run it write ```\i imdb.sql```
 
