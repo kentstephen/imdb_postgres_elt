@@ -4,7 +4,7 @@ import shutil
 import os
 import json
 
-# Get the current working directory (where the script is located)
+# Get the current working directory of where you have the files
 current_directory = os.getcwd()
 
 # Subdirectory for storing the .tsv files
