@@ -1,5 +1,5 @@
 # Get IMDB Data, Put Into PostgreSQL, Recreate the Schema
-## Source: https://developer.imdb.com/non-commercial-datasets/
+## Data Source: https://developer.imdb.com/non-commercial-datasets/
 
 
 
