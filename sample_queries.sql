@@ -86,8 +86,7 @@ WHERE
 -- Richard Sherman,writer,1905,1962
 -- Oscar Hammerstein II,writer,1895,1960
 -- Dorothy Yost,writer,1899,1967
--- Irene Castle,writer,1893,1969
-
+-- Irene Castle,writer,1893,196
 
 
 -- Find the movie actors with the most credits
@@ -105,7 +104,7 @@ ON nb.nconst = tp.nconst
 JOIN title_basics tb
 ON tp.tconst = tb.tconst
 WHERE
-    tp.category = 'actor'
+    tp.category = 'actor' -- OR tp.category = 'actress' -- uncomment to include actresses
     AND tb.titletype = 'movie'
 GROUP BY
     nb.nconst, nb.primaryname
