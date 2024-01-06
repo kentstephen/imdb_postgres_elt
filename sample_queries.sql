@@ -84,3 +84,42 @@ WHERE
 -- H.C. Potter,1904,1977
 -- Richard Sherman,1905,1962
 -- Oscar Hammerstein II,1895,1960
+
+
+-- Find the movie actors with the most credits
+-- filtering is key for performance,
+-- if you leave out the titletype WHERE condition you'll find tv actors with 1000s of credits
+
+
+SELECT
+    nb.nconst, -- for quicker follow up queries
+    nb.primaryname AS actor,
+    COUNT(DISTINCT tb.tconst) as count_of_credits
+FROM name_basics nb
+JOIN title_principals tp
+ON nb.nconst = tp.nconst
+JOIN title_basics tb
+ON tp.tconst = tb.tconst
+WHERE
+    tp.category = 'actor'
+    AND tb.titletype = 'movie'
+GROUP BY
+    nb.nconst, nb.primaryname
+HAVING
+    COUNT(DISTINCT tb.tconst) > 200
+ORDER BY
+    count_of_credits DESC
+LIMIT 50;
+
+-- nm0103977,Brahmanandam,788  -- i looked this guy up and now he has over 1000 acting credits on imdb.com
+-- nm0648803,Matsunosuke Onoe,564
+-- nm0006982,Adoor Bhasi,539
+-- nm0305182,Eddie Garcia,520
+-- nm0706691,Sultan Rahi,478
+-- nm0619107,Masayoshi Nogami,415
+-- nm0246703,Paquito Diaz,415
+-- nm0793813,Shin Seong-il,408
+-- nm0046850,Bahadur,384
+-- nm0007123,Mammootty,377
+-- nm0482320,Mohanlal,365
+-- nm0000616,Eric Roberts,365 -- i know this guy
