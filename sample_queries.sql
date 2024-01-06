@@ -65,7 +65,8 @@ WHERE
 -- have a corresponding tconst then a subquery to find the tconst from title_basics
 
 SELECT
-    nb.primaryname AS actors,
+    nb.primaryname AS cast_and_crew,
+    tp.category,
     nb.birthyear,
     nb.deathyear
 FROM name_basics nb
@@ -74,16 +75,19 @@ ON nb.nconst = tp.nconst
 WHERE
     tp.tconst = (SELECT tconst
                   FROM title_basics
-                  WHERE primarytitle = 'The Story of Vernon and Irene Castle')
+                  WHERE primarytitle = 'The Story of Vernon and Irene Castle');
 
--- George Haight,1905,1984
--- Fred Astaire,1899,1987
--- Ginger Rogers,1911,1995
--- Edna May Oliver,1883,1942
--- Walter Brennan,1894,1974
--- H.C. Potter,1904,1977
--- Richard Sherman,1905,1962
--- Oscar Hammerstein II,1895,1960
+-- George Haight,producer,1905,1984
+-- Fred Astaire,actor,1899,1987
+-- Ginger Rogers,actress,1911,1995
+-- Edna May Oliver,actress,1883,1942
+-- Walter Brennan,actor,1894,1974
+-- H.C. Potter,director,1904,1977
+-- Richard Sherman,writer,1905,1962
+-- Oscar Hammerstein II,writer,1895,1960
+-- Dorothy Yost,writer,1899,1967
+-- Irene Castle,writer,1893,1969
+
 
 
 -- Find the movie actors with the most credits
