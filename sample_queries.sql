@@ -88,6 +88,24 @@ WHERE
 -- Dorothy Yost,writer,1899,1967
 -- Irene Castle,writer,1893,196
 
+-- Find out the categories in title_principals
+
+SELECT
+    DISTINCT category
+FROM title_principals;
+
+-- actor -- note that actor and actress are separate, I don't understand why they did that (why not make them all actor?) but important to note
+-- actress
+-- archive_footage
+-- archive_sound
+-- cinematographer
+-- composer
+-- director
+-- editor
+-- producer
+-- production_designer
+-- self
+-- writer
 
 -- Find the movie actors with the most credits
 -- filtering is key for performance,
