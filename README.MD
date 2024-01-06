@@ -17,7 +17,7 @@ Run [import_imdb_tsvs.py](https://github.com/kentstephen/imdb_postgres_elt/blob/
 That will download and extract the 7 TSV files (roughly 6GB of data), and then create a new directory called tsvs_from_imdb. 
 It will also save the file path to the TSVs so when you run [insert_file_path.py](https://github.com/kentstephen/imdb_postgres_elt/blob/main/insert_file_paths.py), the correct file path will be inserted into the first .sql file [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql).
 
-### If the python files don't work or you don't want to use them
+### If you don't want to use the Python scripts
 
 All you need to run the .sql files is to download and extract the 7 .gz files from the source, and then copy the correct path where you see {{user_provided_directory}} in the COPY FROM lines in [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql).
 
