@@ -94,8 +94,8 @@ SELECT
     DISTINCT category
 FROM title_principals;
 
--- actor -- note that actor and actress are separate. I don't understand why they did that (why not make them all actor?)
--- actress -- but important to note, see optional_changes.sql
+-- actor            -- note that actor and actress are separate. I don't understand why they did that (why not make them all actor?)
+-- actress          -- important to note, see optional_changes.sql
 -- archive_footage
 -- archive_sound
 -- cinematographer
