@@ -1,17 +1,17 @@
 BEGIN;
 CREATE TABLE IF NOT EXISTS title_directors (
-    tconst VARCHAR(10),
-    director_nconst VARCHAR(10)
+    tconst VARCHAR(15),
+    director_nconst VARCHAR(15)
 );
 
 CREATE TABLE IF NOT EXISTS title_writers (
-    tconst VARCHAR(10),
-    writer_nconst VARCHAR(10)
+    tconst VARCHAR(15),
+    writer_nconst VARCHAR(15)
 );
 
 CREATE TABLE IF NOT EXISTS name_known_for (
-    nconst VARCHAR(10),
-    tconst VARCHAR(10)
+    nconst VARCHAR(15),
+    tconst VARCHAR(15)
 );
 
 
