@@ -7,3 +7,4 @@ imdb_tsv_schema.txt
 many_2_many.sql
 tsvs_from_imdb
 save_directory.json
+create_tables_insert_data_imdb_dev.sql
