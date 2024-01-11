@@ -1,17 +1,17 @@
 BEGIN;
 CREATE TABLE IF NOT EXISTS title_directors (
-    tconst VARCHAR(15),
-    director_nconst VARCHAR(15)
+    tconst VARCHAR(25),
+    director_nconst VARCHAR(25)
 );
 
 CREATE TABLE IF NOT EXISTS title_writers (
-    tconst VARCHAR(15),
-    writer_nconst VARCHAR(15)
+    tconst VARCHAR(25),
+    writer_nconst VARCHAR(25)
 );
 
 CREATE TABLE IF NOT EXISTS name_known_for (
-    nconst VARCHAR(15),
-    tconst VARCHAR(15)
+    nconst VARCHAR(25),
+    tconst VARCHAR(25)
 );
 
 
@@ -82,7 +82,7 @@ WHERE nb.nconst IS NULL;
 
 ALTER TABLE name_basics ADD PRIMARY KEY (nconst);
 ALTER TABLE title_basics ADD PRIMARY KEY (tconst);
-ALTER TABLE title_episode ADD FOREIGN KEY (parenttconst) REFERENCES title_basics (tconst);
+-- ALTER TABLE title_episode ADD FOREIGN KEY (parenttconst) REFERENCES title_basics (tconst);
 ALTER TABLE title_akas ADD FOREIGN KEY (titleId) REFERENCES title_basics (tconst);
 ALTER TABLE title_ratings ADD FOREIGN KEY (tconst) REFERENCES title_basics (tconst);
 ALTER TABLE title_crew ADD FOREIGN KEY (tconst) REFERENCES title_basics (tconst);

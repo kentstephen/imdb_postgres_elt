@@ -4,7 +4,7 @@ BEGIN TRANSACTION;
 
 
 CREATE TABLE IF NOT EXISTS title_basics (
-    tconst VARCHAR(15) NOT NULL,
+    tconst VARCHAR(25) NOT NULL,
     titleType TEXT,
     primaryTitle TEXT,
     originalTitle TEXT,
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS title_basics (
 
 CREATE TABLE IF NOT EXISTS name_basics (
 
-    nconst VARCHAR(15) NOT NULL,
+    nconst VARCHAR(25) NOT NULL,
     primaryName TEXT,
     birthYear INT,
     deathYear INT,
