@@ -57,7 +57,7 @@ Mine looks like:
 
 You will then be prompted to enter your user password.
 
-[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql because this file will create the database imdb and then connect to it. If you already created the database then you can comment out that line in [imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) and run the rest.
+[imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) is the do it all file. I suggest using the default postgres db when you log into psql because this file will create the database imdb and then connect to it. If you already created the database then you can comment out that line in [imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/imdb.sql) but it should still run regardless.
 
 To run it, write ```\i imdb.sql``` in psql
 
