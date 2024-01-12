@@ -82,7 +82,7 @@ WHERE nb.nconst IS NULL;
 
 ALTER TABLE name_basics ADD PRIMARY KEY (nconst);
 ALTER TABLE title_basics ADD PRIMARY KEY (tconst);
--- ALTER TABLE title_episode ADD FOREIGN KEY (parenttconst) REFERENCES title_basics (tconst);
+ ALTER TABLE title_episode ADD FOREIGN KEY (parenttconst) REFERENCES title_basics (tconst);
 ALTER TABLE title_akas ADD FOREIGN KEY (titleId) REFERENCES title_basics (tconst);
 ALTER TABLE title_ratings ADD FOREIGN KEY (tconst) REFERENCES title_basics (tconst);
 ALTER TABLE title_crew ADD FOREIGN KEY (tconst) REFERENCES title_basics (tconst);
