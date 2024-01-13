@@ -47,7 +47,7 @@ So after you run this: title_crew and the column knownfortitles in name_basics a
 
 First, make sure you have the file paths updated in the COPY FROM lines in [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql).
 
-Open a terminal and cd to where you cloned the files, type in:
+Open a terminal as an administrator and cd to where you cloned the files, type in:
 
 ```psql -h yourhost -p postgresport -U youruser -d postgres```
 
