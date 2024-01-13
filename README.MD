@@ -25,7 +25,7 @@ All you need to run the .sql files is to download and extract the 7 .gz files fr
 
 You need to ```CREATE DATABASE imdb;``` to run the .sql files you set your connection in your IDE to imdb.public and run [create_tables_and_insert_data_imdb.sql](https://github.com/kentstephen/imdb_postgres_elt/blob/main/create_tables_insert_data_imdb.sql), this will create the schema and then copy the TSVs into the respective tables. 
 
---One note anpit where you are copying from. Postgres can be picky about filepaths for COPY FROM statements. I use Windows and this works from my C drive. I plan rework this script with psql syntax using \copy which should be more tolerant--
+--One note anpit where you are copying from. Postgres can be picky about filepaths for COPY FROM statements. I use Windows and this works from my C drive (my Postgres installation is also in my C drive). I plan rework this script with psql syntax using \copy which should be more tolerant--
 
 At this point there are no relations between the entities, because: 
 
