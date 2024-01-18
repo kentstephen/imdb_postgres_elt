@@ -13,6 +13,13 @@ CREATE TABLE IF NOT EXISTS name_known_for (
     nconst VARCHAR(25),
     tconst VARCHAR(25)
 );
+CREATE TABLE name_title_character (
+    nconst VARCHAR(15),
+    tconst VARCHAR(15),
+    character TEXT,
+    FOREIGN KEY (nconst) REFERENCES name_basics (nconst),
+    FOREIGN KEY (tconst) references title_basics (tconst)
+);
 
 
 INSERT INTO title_directors (tconst, director_nconst)
@@ -30,6 +37,15 @@ SELECT nb.nconst, unnest(string_to_array(nb.knownfortitles, ',')) AS tconst
 FROM name_basics nb
 WHERE nb.knownfortitles IS NOT NULL AND nb.knownfortitles <> '';
 
+INSERT INTO name_title_character (nconst, tconst, character)
+SELECT
+    tp.nconst,
+    tp.tconst,
+    unnest(string_to_array(trim(both '[]" ' from tp.characters), '","')) AS character
+FROM
+    title_principals tp
+WHERE
+    tp.characters IS NOT NULL AND tp.characters <> '';
 
 -- Handling tconst values
 WITH MissingTconst AS (
@@ -94,6 +110,8 @@ ALTER TABLE title_writers ADD FOREIGN KEY (writer_nconst) REFERENCES name_basics
 ALTER TABLE title_writers ADD FOREIGN KEY (tconst) REFERENCES title_basics (tconst);
 ALTER TABLE name_known_for ADD FOREIGN KEY (tconst) REFERENCES title_basics (tconst);
 ALTER TABLE name_known_for ADD FOREIGN KEY (nconst) REFERENCES name_basics (nconst);
+ALTER TABLE name_title_character ADD FOREIGN KEY (tconst) REFERENCES title_basics (tconst);
+ALTER TABLE name_title_character ADD FOREIGN KEY (nconst) REFERENCES name_basics (nconst);
 
 
 
