@@ -5,6 +5,7 @@
 
 ![ERD of Project](https://github.com/kentstephen/imdb_postgres_elt/blob/main/diagrams/imdb_schema.png)
 
+## If you would like to run this code I highly reccomend you use [imdb_postgres_elt_python](https://github.com/kentstephen/imdb_postgres_elt_python), it is the same SQL packaged in Python for ease of use.
 
 ## I grew up on IMDB
 
